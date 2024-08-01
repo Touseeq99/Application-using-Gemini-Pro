@@ -28,6 +28,5 @@ def embedding_model(input_text):
     return embeding_list
 def ask_gemini_model(input_text):
     gemini_ai_model = genai.GenerativeModel("gemini-pro")
-    response  = gemini_ai_model.generate_content(input_text,["input:who are you",
-  "output: i am an ai brain made by touseeq ahmed ",])
+    response  = gemini_ai_model.generate_content(input_text)
     return response

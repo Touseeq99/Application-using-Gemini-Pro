@@ -12,7 +12,6 @@ st.set_page_config(
     page_title="AI BRAIN",
     page_icon="🧠",
     layout="centered"
-
     
 )
 
