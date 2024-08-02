@@ -26,13 +26,7 @@ with st.sidebar:
         icons=['chat-dots-fill', 'image-fill', 'textarea-t', 'patch-question-fill'],
         default_index=0
     )
-def text_to_speech(text):
-    engine = pyttsx3.init()
-    with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as fp:
-        temp_file_path = fp.name
-    engine.save_to_file(text, temp_file_path)
-    engine.runAndWait()
-    return temp_file_path
+
 def translate_role_for_streamlit(user_role):
     if user_role =="model":
         return "assitant"
@@ -56,8 +50,6 @@ if selected == "CHATBOT":
         output = st.session_state.chat_session.send_message(user_prompt)
         with st.chat_message("assistant"):
             st.markdown(output.text)
-            audio_file = text_to_speech(output.text)
-            st.audio(audio_file)
 
 # Image Captioning section
 elif selected == "IMAGE BOT":
